@@ -80,7 +80,7 @@ struct Post: Decodable {
 // 3. It leverages Combine to handle the response, including completion and value handling.
 // 4. It stores Combine subscriptions in the `cancellables` property, allowing for proper management of subscriptions.
 
-   // Construct the URL for the API endpoint
+ func getPosts(){
     let url = String(format: ApiURL.Post.post.getURL())
     let urlComponents = URLComponents(string: url)
     let endPoint = EndPoint(url: (urlComponents?.string)!, method: .get)
@@ -97,5 +97,6 @@ struct Post: Decodable {
             print(response)
         })
     .store(in: &cancellables)
+}
 ```
 
