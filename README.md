@@ -25,9 +25,8 @@ extension ApiURL.Auth {
 
 - Model
 ```swift
-struct User: Decodable {
-    var success: Bool
-    var message, accessToken: String?
+struct Post: Decodable { 
+    var name, Title: String?
     
 }
 ```
@@ -46,8 +45,8 @@ struct User: Decodable {
             receiveCompletion: { completion in
                 NetworkKit.shared.handleCompletion(url: URL(string: endPoint.url)!, completion: completion) // optional 
             },
-            receiveValue: { (response: YourModel) in
-              
+            receiveValue: { (response: Post) in
+              print(response)
             })
     .store(in: &cancellables)
 ```
