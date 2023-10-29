@@ -14,7 +14,7 @@ public class NetworkKit {
     
     static public let shared = NetworkKit()
     
-    func request<T: Decodable>(_ endpoint: EndPointConvertible) -> AnyPublisher<T, Error> {
+    public func request<T: Decodable>(_ endpoint: EndPointConvertible) -> AnyPublisher<T, Error> {
         
         var urlRequest = URLRequest(url: URL(string: endpoint.url)!)
         urlRequest.httpMethod = endpoint.method.rawValue
@@ -60,7 +60,7 @@ public class NetworkKit {
         return formatter.string(fromByteCount: bytes)
     }
     
-    func handleCompletion(url: URL, completion: Subscribers.Completion<Error>){
+    public  func handleCompletion(url: URL, completion: Subscribers.Completion<Error>){
         switch completion{
         case .finished:
             
