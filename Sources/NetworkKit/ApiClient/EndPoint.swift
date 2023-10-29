@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct EndPoint: EndPointConvertible {
-    let url: String
-    let parameters: Parameters?
-    let headers: Headers?
-    let method: HTTPMethod
-    let contentType: String // Add content type here
+public struct EndPoint: EndPointConvertible {
+    public let url: String
+    public let parameters: Parameters?
+    public let headers: Headers?
+    public let method: HTTPMethod
+    public let contentType: String // Add content type here
 
    public init(url: String, parameters: Parameters? = nil, headers: Headers? = nil, method: HTTPMethod = .get, contentType: String = "application/json") {
         self.url = url

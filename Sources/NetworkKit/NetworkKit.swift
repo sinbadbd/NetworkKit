@@ -12,7 +12,7 @@ import Combine
 @available(iOS 13.0, *)
 public class NetworkKit {
     
-    static let shared = NetworkKit()
+    static public let shared = NetworkKit()
     
     func request<T: Decodable>(_ endpoint: EndPointConvertible) -> AnyPublisher<T, Error> {
         
