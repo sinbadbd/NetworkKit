@@ -36,18 +36,20 @@ struct Post: Decodable {
 ```
 -- Network Call
 ```swift
+   func getPosts(){
     let url = String(format: ApiURL.Post.post.getURL())
     let urlComponents = URLComponents(string: url)
     let endPoint = EndPoint(url: (urlComponents?.string)!, method: .get)
-    
+
     NetworkKit.shared.request(endPoint)
-        .sink(
-            receiveCompletion: { completion in
-                NetworkKit.shared.handleCompletion(url: URL(string: endPoint.url)!, completion: completion) // optional 
-            },
-            receiveValue: { (response: Post) in
-              print(response)
-            })
+    .sink(
+        receiveCompletion: { completion in
+            NetworkKit.shared.handleCompletion(url: URL(string: endPoint.url)!, completion: completion) // optional 
+        },
+        receiveValue: { (response: Post) in
+          print(response)
+        })
     .store(in: &cancellables)
+    }
 ```
 
