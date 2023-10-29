@@ -14,7 +14,7 @@ struct EndPoint: EndPointConvertible {
     let method: HTTPMethod
     let contentType: String // Add content type here
 
-    init(url: String, parameters: Parameters? = nil, headers: Headers? = nil, method: HTTPMethod = .get, contentType: String = "application/json") {
+   public init(url: String, parameters: Parameters? = nil, headers: Headers? = nil, method: HTTPMethod = .get, contentType: String = "application/json") {
         self.url = url
         self.parameters = parameters
         self.headers = headers
