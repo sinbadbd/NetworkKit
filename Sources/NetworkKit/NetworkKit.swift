@@ -60,7 +60,7 @@ public class NetworkKit {
         return formatter.string(fromByteCount: bytes)
     }
     
-    public  func handleCompletion(url: URL, completion: Subscribers.Completion<Error>){
+    public func handleCompletion(url: URL, completion: Subscribers.Completion<Error>){
         switch completion{
         case .finished:
             
