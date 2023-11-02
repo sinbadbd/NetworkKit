@@ -13,13 +13,13 @@ import Combine
 public class NetworkKit {
     
     static public let shared = NetworkKit()
-    
+    static public let token  = ""
     public func request<T: Decodable>(_ endpoint: EndPointConvertible) -> AnyPublisher<T, Error> {
         
         var urlRequest = URLRequest(url: URL(string: endpoint.url)!)
         urlRequest.httpMethod = endpoint.method.rawValue
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        //urlRequest.setValue("Bearer \(endpoint.token)", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Bearer \(NetworkKit.token)", forHTTPHeaderField: "Authorization")
         urlRequest.allHTTPHeaderFields = endpoint.headers
         
         if let parameters = endpoint.parameters {
