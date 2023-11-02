@@ -8,6 +8,7 @@
 import Foundation
 
 public struct EndPoint: EndPointConvertible {
+    
     public let url: String
     public let parameters: Parameters?
     public let headers: Headers?

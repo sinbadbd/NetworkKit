@@ -19,7 +19,7 @@ public class NetworkKit {
         var urlRequest = URLRequest(url: URL(string: endpoint.url)!)
         urlRequest.httpMethod = endpoint.method.rawValue
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("Bearer \(endpoint.token)", forHTTPHeaderField: "Authorization")
+        //urlRequest.setValue("Bearer \(endpoint.token)", forHTTPHeaderField: "Authorization")
         urlRequest.allHTTPHeaderFields = endpoint.headers
         
         if let parameters = endpoint.parameters {

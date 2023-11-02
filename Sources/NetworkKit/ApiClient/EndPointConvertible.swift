@@ -15,5 +15,5 @@ public protocol EndPointConvertible {
     var parameters: Parameters? { get }
     var headers: Headers? { get }
     var method: HTTPMethod { get }
-    var token: String { get }
+    //var token: String { get }
 }
