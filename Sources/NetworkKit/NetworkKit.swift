@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-@available(iOS 13.0, *)
+//@available(iOS 13.0, *)
 public class NetworkKit {
     
     static public let shared = NetworkKit()

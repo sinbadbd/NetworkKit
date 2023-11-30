@@ -12,7 +12,7 @@
 //    let success: Bool
 //    let errors: [String: String]
 //}
-//@available(iOS 13.0, *)
+////@available(iOS 13.0, *)
 //extension ApiManager{
 //
 //    func formatBytes(_ bytes: Int64) -> String {

@@ -10,7 +10,7 @@ import Network
 import Combine
 import SwiftUI
 
-@available(iOS 13.0, *)
+//@available(iOS 13.0, *)
 class NetworkMonitor: ObservableObject {
     static let shared = NetworkMonitor()
     private let monitor = NWPathMonitor()
